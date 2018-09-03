@@ -1,0 +1,73 @@
+\documentclass{book}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{hyperref}
+
+\title{Tables of Psychrometric Properties at Sea Level Pressure}
+\author{Mitchell T. Paulus}
+
+\begin{document}
+
+\maketitle{}
+
+\chapter{Preface}
+
+These charts grew out of the need to be able to quickly find
+psychrometric properties for the PE exam.
+
+\chapter{\(T_{db}\) and \(T_{wb}\) }
+
+The following charts are based on integer combinations of \(T_{db}\) and
+\(T_{wb}\).
+
+\newpage
+{
+\small
+
+\input{tdb-twb.tex}
+
+}
+
+\chapter{\(T_{db}\) and \(\phi\) }
+
+
+\newpage
+{
+\small
+
+\input{tdb-rh.tex}
+
+}
+
+
+\chapter{  \(T_{db}\) and \(T_{dp}\) }
+
+\newpage
+{
+\small
+
+\input{tdb-tdp.tex}
+
+
+}
+
+
+%{
+%\small
+%\begin{tabular}{llll|llll|llll}
+
+    %\input{../psychrometrics/table.tex}
+
+%\end{tabular}
+
+%}
+
+%\newpage
+
+
+\end{document}
