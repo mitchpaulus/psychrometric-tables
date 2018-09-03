@@ -11,14 +11,53 @@
 \title{Tables of Psychrometric Properties at Sea Level Pressure}
 \author{Mitchell T. Paulus}
 
+
+\newcommand{\tdb}{\(T_{db}\)}
+\newcommand{\twb}{\(T_{wb}\)}
+\newcommand{\tdp}{\(T_{dp}\)}
+\newcommand{\rh}{\(\phi\)}
+\newcommand{\spechum}{\(\omega\)}
+\newcommand{\enthalpy}{\(h\)}
+
 \begin{document}
 
 \maketitle{}
 
+\tableofcontents{}
+
 \chapter{Preface}
 
 These charts grew out of the need to be able to quickly find
-psychrometric properties for the PE exam.
+psychrometric properties for the PE exam. The tables are only in the
+I.P. unit system as the PM portion of the PE exam only consists of
+problems in these units.
+
+The table entries were completed using the formulations given in
+\textit{ASHRAE Fundamentals 2017}. Temperatures between 32°F and 100°F
+were considered. Entries with enthalpy values greater than 60
+BTU/lb\textsubscript{da}
+were not printed.
+
+For the \tdb{}, \rh{} table, entries were skipped if the difference
+between the previous values for both \spechum{} and \enthalpy{} were not
+greater than 0.0025 and 0.5 BTU/lb\textsubscript{da} respectively.
+
+\begin{table}
+\centering
+\caption{Symbols and units.}
+\label{tab:}
+\begin{tabular}{lll}
+\toprule
+    \tdb & Dry bulb temperature & °F \\
+    \twb & Wet bulb temperature & °F \\
+    \tdp & Dew point temperature & °F \\
+    \rh & Relative humidity & \% (0-100) \\
+    \spechum & Specific humidity & 0-1 \\
+    \enthalpy & Enthalpy & BTU/(lb\textsubscript{da}) \\
+\end{tabular}
+
+\end{table}
+
 
 \chapter{\(T_{db}\) and \(T_{wb}\) }
 

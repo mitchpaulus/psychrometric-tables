@@ -5,7 +5,7 @@ psychro = []
 prev_ω = 100
 prev_h = 1000
 
-for t_db in range(100,31,-1):
+for t_db in range(105,31,-1):
     for t_dp in range(t_db,31,-1):
         ω = psy.ω_from_t_dp(t_dp)
         h = psy.h_from_t_db_and_ω(t_db, ω)

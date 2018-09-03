@@ -3,5 +3,8 @@
 *.fls
 *.log
 *.out
-
 *.pyc
+*.toc
+tex/tdb-rh.tex
+tex/tdb-tdp.tex
+tex/tdb-twb.tex

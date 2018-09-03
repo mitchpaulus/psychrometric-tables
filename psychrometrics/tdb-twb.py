@@ -1,7 +1,7 @@
 import psychrometrics as psy
 
 psychro = []
-for t_db in range(100,31,-1):
+for t_db in range(105,31,-1):
     for t_wb in range(t_db, 31, -1):
         ω = psy.ω_from_t_db_and_t_wb(t_db, t_wb)
         h = psy.h_from_t_db_and_t_wb(t_db, t_wb)
