@@ -1,4 +1,5 @@
 import psychrometrics as psy
+import sys
 
 psychro = []
 for t_db in range(105,31,-1):
@@ -8,7 +9,7 @@ for t_db in range(105,31,-1):
         if ω > 0 and h < 60:
             psychro.append( (t_db, t_wb, ω, h))
 
-with open('../tex/tdb-twb.tex','w') as f:
+with open(sys.argv[1],'w+') as f:
     for page in psy.chunks(psychro,150):
         lines = []
         for i in range(0,50):
