@@ -9,9 +9,8 @@
 \usepackage{hyperref}
 \usepackage{layout}
 
-\title{Tables of Psychrometric Properties at Sea Level Pressure}
+\title{Tables of Psychrometric Properties at Sea Level Pressure (IP)}
 \author{Mitchell T. Paulus}
-
 
 \newcommand{\tdb}{\(T_{db}\)}
 \newcommand{\twb}{\(T_{wb}\)}
@@ -37,7 +36,7 @@ I.P. unit system as the PM portion of the PE exam only consists of
 problems in these units.
 
 The table entries were completed using the formulations given in
-\textit{ASHRAE Fundamentals 2017}. Temperatures between 32°F and 100°F
+\textit{ASHRAE Fundamentals 2017}. Temperatures between 32°F and 105°F
 were considered. Entries with enthalpy values greater than 60
 BTU/lb\textsubscript{da}
 were not printed.
@@ -45,6 +44,9 @@ were not printed.
 For the \tdb{}, \rh{} table, entries were skipped if the difference
 between the previous values for both \spechum{} and \enthalpy{} were not
 greater than 0.0025 and 0.5 BTU/lb\textsubscript{da} respectively.
+
+These tables were generated using a python script which is open-source
+and available at \url{https://github.com/mitchpaulus/psychrometric-tables}.
 
 \begin{table}
 \centering
@@ -62,11 +64,7 @@ greater than 0.0025 and 0.5 BTU/lb\textsubscript{da} respectively.
 
 \end{table}
 
-
 \chapter{\(T_{db}\) and \(T_{wb}\) }
-
-The following charts are based on integer combinations of \(T_{db}\) and
-\(T_{wb}\).
 
 \newpage
 {

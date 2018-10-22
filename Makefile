@@ -1,23 +1,26 @@
-tex/main.pdf : tex/main.tex tex/tdb-twb.tex tex/tdb-tdp.tex tex/tdb-rh.tex
-	cd tex && latexmk -lualatex main.tex
+TEX_FOLDER = tex/
+PSY_FOLDER = psychrometrics/
 
-tex/tdb-twb.tex : psychrometrics/tdb-twb.py psychrometrics/psychrometrics.py
-	cd psychrometrics && python3 tdb-twb.py
+$(TEX_FOLDER)main.pdf: $(TEX_FOLDER)main.tex $(TEX_FOLDER)tdb-rh.tex $(TEX_FOLDER)tdb-tdp.tex $(TEX_FOLDER)tdb-twb.tex
+	cd $(TEX_FOLDER) && latexmk -lualatex main.tex
 
-tex/tdb-tdp.tex : psychrometrics/tdb-tdp.py psychrometrics/psychrometrics.py
-	cd psychrometrics && python3 tdb-tdp.py
+$(TEX_FOLDER)tdb-twb.tex :
+	python3 $(PSY_FOLDER)tdb-twb.py $(TEX_FOLDER)tdb-twb.tex
 
-tex/tdb-rh.tex : psychrometrics/tdb-rh.py psychrometrics/psychrometrics.py
-	cd psychrometrics && python3 tdb-rh.py
+$(TEX_FOLDER)tdb-rh.tex :
+	python3 $(PSY_FOLDER)tdb-rh.py $(TEX_FOLDER)tdb-rh.tex
 
-clean :
-	rm -f tex/tdb-twb.tex
-	rm -f tex/tdb-tdp.tex
-	rm -f tex/tdb-rh.tex
-	rm -f tex/main.pdf
-	rm -f tex/main.fls
-	rm -f tex/main.aux
-	rm -f tex/main.out
-	rm -f tex/main.fdb_latexmk
-	rm -f tex/main.log
-	rm -f tex/main.toc
+$(TEX_FOLDER)tdb-tdp.tex :
+	python3 $(PSY_FOLDER)tdb-tdp.py $(TEX_FOLDER)tdb-tdp.tex
+
+clean : 
+	rm -f $(TEX_FOLDER)/main.aux
+	rm -f $(TEX_FOLDER)/main.log
+	rm -f $(TEX_FOLDER)/main.out
+	rm -f $(TEX_FOLDER)/main.toc
+	rm -f $(TEX_FOLDER)/main.pdf
+	rm -f $(TEX_FOLDER)/main.fdb_latexmk
+	rm -f $(TEX_FOLDER)/main.fls
+	rm -f $(TEX_FOLDER)/tdb-rh.tex
+	rm -f $(TEX_FOLDER)/tdb-twb.tex
+	rm -f $(TEX_FOLDER)/tdb-tdp.tex
