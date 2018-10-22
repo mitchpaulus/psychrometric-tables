@@ -52,12 +52,28 @@ def h_from_t_db_and_t_wb(t_db, t_wb):
     ω = ω_from_t_db_and_t_wb(t_db, t_wb)
     return h_from_t_db_and_ω(t_db, ω)
 
+def v_from_t_db_and_t_wb(t_db, t_wb):
+    """
+    Returns specific volume (cubic feet per lb dry air) from dry bulb 
+    and wet bulb temperature.
+    """
+    ω = ω_from_t_db_and_t_wb(t_db, t_wb)
+    return 0.370486 * (t_db + 459.67) * (1 + 1.607858 * ω) / PATM
+
 
 def print_data_to_string(data):
     return [ f'{data[0]:d}',
              f'{data[1]:d}',
              f'{data[2]:0.4f}',
              f'{data[3]:0.2f}']
+
+def print_data_to_string_v(data):
+    return [ f'{data[0]:d}',
+             f'{data[1]:d}',
+             f'{data[2]:0.4f}',
+             f'{data[3]:0.2f}',
+             f'{data[4]:0.2f}'
+             ]
 
 def check_page_length(page, i):
     if i < len(page):
